@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ui</class>
+ <widget class="QMainWindow" name="ui">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1076</width>
+    <height>902</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_5">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QPushButton" name="pushButton_3">
+            <property name="text">
+             <string>情绪</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_4">
+            <property name="text">
+             <string>动作</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_5">
+            <property name="text">
+             <string>意境</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTreeWidget" name="treeWidget">
+          <property name="maximumSize">
+           <size>
+            <width>364</width>
+            <height>1400</height>
+           </size>
+          </property>
+          <column>
+           <property name="text">
+            <string>情绪</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>相关动作</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>相关意境</string>
+           </property>
+          </column>
+          <item>
+           <property name="text">
+            <string>开心</string>
+           </property>
+           <property name="text">
+            <string>笑了</string>
+           </property>
+           <property name="text">
+            <string>春暖花开</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>名词解释</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="plainTextEdit">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>363</width>
+            <height>390</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>1400</width>
+            <height>390</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
+          <property name="plainText">
+           <string>罪皇塔，关着有罪的皇帝。
+罪皇塔位于西国地下的深处，终日不见阳光，只有黑暗。
+深深地黑暗中，隐隐有水声流动。
+有一条暗河，从罪皇塔下流过，不知起于何处，流向何处。
+黑暗的尽头，便是罪皇塔，以及几盏灯着廊道的微光，因暗河流动的风流而明灭不定。
+突然间，传来了绵长刺耳的声响，那是长剑拖在青石地板上的声音。
+一道人影，突兀地出现在黑暗与微光交界处，缓缓向罪皇塔走来。
+微光拂去他身边的黑暗，他的身影显露了出来。
+来人衣着朴素，虽不华丽，却不失贵气，想来是个有身份的人。
+只是此刻，却多了几分狼狈落魄之感，因为他受伤了。
+他的衣着破了无数的洞，有的血迹已经干了，有的伤口还在流血，故而他每走一步，都会在地上流下血迹。
+一路行来，无数死伤，步步皆血，能到此处，已是万幸。
+为了到达这里，很多离人已经死去，还有很多离人正在死去。
+无论是死去的离人，还是正在死去的离人，都是心甘情愿的。
+因为他是离人的救赎，西国的师相——朔。
+西国是个阶级化极其严重的国家，数百年来，西国只有两种人，一种是身份高贵的西人，一种是卑微低贱的离人。
+西人是统治者与施暴者，而离人是受奴役者，离人不是奴隶，但实际和奴隶没有太大的差别。
+数年前，离人发动叛乱，但失败了，从此，离人受到了更大的打压与报复。
+而将他们从这场打压与奴役中解决出来的，正是这个名年轻男子。
+七年前，他与西国二皇子西陵晓联手，将重创西国的皇帝——西皇，并将他关进眼前的罪皇塔中。
+将有罪的皇帝关进塔中，罪皇塔之名由此而来。</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLineEdit" name="lineEdit"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="searchBtn1">
+            <property name="text">
+             <string>搜索单行</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="searchBtn2">
+            <property name="text">
+             <string>搜索多行</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="saveTextBtn">
+            <property name="text">
+             <string>保存文本</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="plainTextEdit_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>363</width>
+            <height>390</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="plainText">
+           <string>罪皇塔，关着有罪的皇帝。
+罪皇塔位于西国地下的深处，终日不见阳光，只有黑暗。
+深深地黑暗中，隐隐有水声流动。
+有一条暗河，从罪皇塔下流过，不知起于何处，流向何处。
+黑暗的尽头，便是罪皇塔，以及几盏灯着廊道的微光，因暗河流动的风流而明灭不定。
+突然间，传来了绵长刺耳的声响，那是长剑拖在青石地板上的声音。
+一道人影，突兀地出现在黑暗与微光交界处，缓缓向罪皇塔走来。
+微光拂去他身边的黑暗，他的身影显露了出来。
+来人衣着朴素，虽不华丽，却不失贵气，想来是个有身份的人。
+只是此刻，却多了几分狼狈落魄之感，因为他受伤了。
+他的衣着破了无数的洞，有的血迹已经干了，有的伤口还在流血，故而他每走一步，都会在地上流下血迹。
+一路行来，无数死伤，步步皆血，能到此处，已是万幸。
+为了到达这里，很多离人已经死去，还有很多离人正在死去。
+无论是死去的离人，还是正在死去的离人，都是心甘情愿的。
+因为他是离人的救赎，西国的师相——朔。
+西国是个阶级化极其严重的国家，数百年来，西国只有两种人，一种是身份高贵的西人，一种是卑微低贱的离人。
+西人是统治者与施暴者，而离人是受奴役者，离人不是奴隶，但实际和奴隶没有太大的差别。
+数年前，离人发动叛乱，但失败了，从此，离人受到了更大的打压与报复。
+而将他们从这场打压与奴役中解决出来的，正是这个名年轻男子。
+七年前，他与西国二皇子西陵晓联手，将重创西国的皇帝——西皇，并将他关进眼前的罪皇塔中。
+将有罪的皇帝关进塔中，罪皇塔之名由此而来。</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPlainTextEdit" name="plainTextEdit_3">
+        <property name="minimumSize">
+         <size>
+          <width>500</width>
+          <height>819</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>600</width>
+          <height>1400</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="plainText">
+         <string>罪皇塔，关着有罪的皇帝。
+罪皇塔位于西国地下的深处，终日不见阳光，只有黑暗。
+深深地黑暗中，隐隐有水声流动。
+有一条暗河，从罪皇塔下流过，不知起于何处，流向何处。
+黑暗的尽头，便是罪皇塔，以及几盏灯着廊道的微光，因暗河流动的风流而明灭不定。
+突然间，传来了绵长刺耳的声响，那是长剑拖在青石地板上的声音。
+一道人影，突兀地出现在黑暗与微光交界处，缓缓向罪皇塔走来。
+微光拂去他身边的黑暗，他的身影显露了出来。
+来人衣着朴素，虽不华丽，却不失贵气，想来是个有身份的人。
+只是此刻，却多了几分狼狈落魄之感，因为他受伤了。
+他的衣着破了无数的洞，有的血迹已经干了，有的伤口还在流血，故而他每走一步，都会在地上流下血迹。
+一路行来，无数死伤，步步皆血，能到此处，已是万幸。
+为了到达这里，很多离人已经死去，还有很多离人正在死去。
+无论是死去的离人，还是正在死去的离人，都是心甘情愿的。
+因为他是离人的救赎，西国的师相——朔。
+西国是个阶级化极其严重的国家，数百年来，西国只有两种人，一种是身份高贵的西人，一种是卑微低贱的离人。
+西人是统治者与施暴者，而离人是受奴役者，离人不是奴隶，但实际和奴隶没有太大的差别。
+数年前，离人发动叛乱，但失败了，从此，离人受到了更大的打压与报复。
+而将他们从这场打压与奴役中解决出来的，正是这个名年轻男子。
+七年前，他与西国二皇子西陵晓联手，将重创西国的皇帝——西皇，并将他关进眼前的罪皇塔中。
+将有罪的皇帝关进塔中，罪皇塔之名由此而来。</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1076</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
