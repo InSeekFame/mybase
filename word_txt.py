@@ -40,11 +40,11 @@ for paragraph in all_paragraphs:
         # 记录下一行
         readNextLine = True
         # print('当前行：', paragraph.text)
-        document1.add_paragraph(paragraph.text)
+        # document1.add_paragraph(paragraph.text)
 
     lastLine = line
     count += 1
     if count == 100000:
         break
 
-document1.save("book/docxs/择天季笔录.docx")
+# document1.save("book/docxs/择天季笔录.docx")
