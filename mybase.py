@@ -1,6 +1,6 @@
 
 # 安装PySide2 : pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pyside2
-from PySide2.QtWidgets import QApplication, QMessageBox, QLineEdit, QAction
+from PySide2.QtWidgets import QApplication, QMessageBox, QLineEdit, QAction,QPlainTextEdit
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtCore import QFile
 from PySide2.QtGui import QIcon
@@ -20,7 +20,8 @@ class MyBase:
         # 注意：里面的控件对象也成为窗口对象的属性了
         # 比如self.ui.button, self.ui.textEdit
         self.ui = QUiLoader().load(qfile_base)
-        self.ui.searchBtn1.clicked.connect(self.searchParagraphs)
+        self.ui.searchBtn1.clicked.connect(self.searchBtnClick)
+        self.ui.saveWordBtn.clicked.connect(self.saveWordsClick)
 
         # openAction = QAction()
         # openAction.setShortcut('Ctrl+o')
@@ -30,10 +31,61 @@ class MyBase:
     def exit(self):
         print('ctrl+o')
 
+    def saveWordsClick(self):
+        print('------修改后的名词解释------')
+        print(self.ui.textEdit1.toPlainText())
+        document = Document("book/docxs/mybase/小说名词集录.docx")
+        keyWords = '【' + self.ui.lineEdit.text() + '】'
+        isEdit = False
+        # 在最末行添加
+        # document.add_paragraph(self.ui.textEdit1.toPlainText())
+        # document.save('book/docxs/mybase/小说名词集录.docx')
+
+        print('总行数：',document.paragraphs)
+
+        for index in range(len(document.paragraphs)):
+            paragraph = document.paragraphs[index]
+            line = paragraph.text
+            keyWords = '【' + self.ui.lineEdit.text() + '】'
+            if keyWords in line:
+                isEdit = True
+            if '---end--' in line and isEdit == True:
+                # paragraph.insert_paragraph_before('aaaaaaaaa----aaaaaaa')
+                last_paragraph = document.paragraphs[index-1]
+                lastText = last_paragraph.text
+                last_paragraph.clear()
+                newWord = self.ui.lineEdit2.text()
+                last_paragraph.add_run(lastText+'\n'+newWord)
+                document.save('book/docxs/mybase/小说名词集录.docx')
+                isEdit = False
+                break
+
+    def searchWords(self):
+        print('搜索名词解释：')
+        self.ui.textEdit1.clear()
+        document = Document("book/docxs/mybase/小说名词集录.docx")
+        isOpen = False
+        keyWords = '【' + self.ui.lineEdit.text() + '】'
+        for paragraph in document.paragraphs:
+            line = paragraph.text
+            if keyWords in line:
+                isOpen = True
+
+            if isOpen == True:
+                self.ui.textEdit1.insertPlainText(line)
+                self.ui.textEdit1.insertPlainText('\n')
+
+            if '---end--' in line and isOpen == True:
+                isOpen = False
+
+
     def searchBtnClick(self):
         keyWords = self.ui.lineEdit.text()
         print(keyWords)
-        self.searchParagraphs()
+        # 搜索名词
+        self.searchWords()
+        # 搜索句子
+        # self.searchParagraphs()
 
     # 从关键字获取句子
     def searchParagraphs(self):
@@ -92,7 +144,7 @@ class MyBase:
 
             lastLine = line
             count += 1
-            if count == 100000:
+            if count == 1000000:
                 break
 
         # document1.save("book/docxs/择天季笔录.docx")

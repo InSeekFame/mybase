@@ -45,37 +45,63 @@
          </layout>
         </item>
         <item>
-         <widget class="QTreeWidget" name="treeWidget">
-          <property name="maximumSize">
-           <size>
-            <width>364</width>
-            <height>1400</height>
-           </size>
-          </property>
+         <widget class="QTreeWidget" name="treeWidget_2">
           <column>
            <property name="text">
             <string>情绪</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>相关动作</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>相关意境</string>
            </property>
           </column>
           <item>
            <property name="text">
             <string>开心</string>
            </property>
+          </item>
+          <item>
            <property name="text">
-            <string>笑了</string>
+            <string>不开心</string>
            </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTreeWidget" name="treeWidget_3">
+          <column>
            <property name="text">
-            <string>春暖花开</string>
+            <string>动作</string>
+           </property>
+          </column>
+          <item>
+           <property name="text">
+            <string>大笑</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>皱眉</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTreeWidget" name="bookList">
+          <column>
+           <property name="text">
+            <string>书列表</string>
+           </property>
+          </column>
+          <item>
+           <property name="text">
+            <string>择天记</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>诛仙</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>搜神记</string>
            </property>
           </item>
          </widget>
@@ -122,6 +148,16 @@
          </widget>
         </item>
         <item>
+         <widget class="QLineEdit" name="lineEdit2"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="insertWordBtn">
+          <property name="text">
+           <string>插入关键词</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
            <widget class="QLineEdit" name="lineEdit"/>
@@ -134,16 +170,16 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="searchBtn2">
+           <widget class="QPushButton" name="saveWordBtn">
             <property name="text">
-             <string>搜索多行</string>
+             <string>保存名词</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="saveTextBtn">
             <property name="text">
-             <string>保存文本</string>
+             <string>保存例句</string>
             </property>
            </widget>
           </item>
