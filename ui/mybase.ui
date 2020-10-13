@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1138</width>
-    <height>902</height>
+    <height>957</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -45,40 +45,281 @@
          </layout>
         </item>
         <item>
-         <widget class="QTreeWidget" name="treeWidget_2">
+         <widget class="QTreeWidget" name="treeWidget_top">
           <column>
            <property name="text">
-            <string>情绪</string>
+            <string>情绪/神情/动作</string>
            </property>
           </column>
           <item>
            <property name="text">
-            <string>开心</string>
+            <string>正面情绪</string>
            </property>
+           <item>
+            <property name="text">
+             <string>爱意、爱慕</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>满足</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>欣快</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>感动感恩</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>快乐</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>幸福</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>自信</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>骄傲</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>愉快</string>
+            </property>
+           </item>
           </item>
           <item>
            <property name="text">
-            <string>不开心</string>
+            <string>中性情绪</string>
            </property>
+           <item>
+            <property name="text">
+             <string>好奇</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>同情心</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>羡慕</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>惊讶</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>震惊</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>同情</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>出世</string>
+            </property>
+           </item>
           </item>
-         </widget>
-        </item>
-        <item>
-         <widget class="QTreeWidget" name="treeWidget_3">
-          <column>
+          <item>
+           <property name="text">
+            <string>负面情绪</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>恐惧</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>内疚</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>惊悚</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>愤怒</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>烦恼</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>丧恸</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>焦虑</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>冷漠</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>敬畏</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>厌烦</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>轻蔑鄙视</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>抑郁</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>尴尬</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>失败</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>欲望</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>失望</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>仇恨</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>羞辱</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>忌妒</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>孤独</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>情欲</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>后悔</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>自责</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>悲伤</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>担心、担忧或忧虑</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>痛苦</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>羞怯、害羞</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>羞耻</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>怅然若失</string>
+            </property>
+           </item>
+          </item>
+          <item>
+           <property name="text">
+            <string>神情</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>眼里有光</string>
+            </property>
+           </item>
+          </item>
+          <item>
            <property name="text">
             <string>动作</string>
            </property>
-          </column>
-          <item>
-           <property name="text">
-            <string>大笑</string>
-           </property>
+           <item>
+            <property name="text">
+             <string>怔了怔</string>
+            </property>
+           </item>
           </item>
           <item>
            <property name="text">
-            <string>皱眉</string>
+            <string>意境</string>
            </property>
+           <item>
+            <property name="text">
+             <string>一片安静</string>
+            </property>
+           </item>
           </item>
          </widget>
         </item>
@@ -165,7 +406,7 @@
           <item>
            <widget class="QPushButton" name="searchBtn1">
             <property name="text">
-             <string>搜索单行</string>
+             <string>检索词库</string>
             </property>
            </widget>
           </item>
@@ -179,7 +420,7 @@
           <item>
            <widget class="QPushButton" name="saveTextBtn">
             <property name="text">
-             <string>保存例句</string>
+             <string>录入句库</string>
             </property>
            </widget>
           </item>

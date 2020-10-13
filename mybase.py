@@ -1,6 +1,6 @@
 
 # 安装PySide2 : pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pyside2
-from PySide2.QtWidgets import QApplication, QMessageBox, QLineEdit, QAction,QPlainTextEdit
+from PySide2.QtWidgets import QApplication, QMessageBox, QLineEdit, QAction,QPlainTextEdit,QTreeWidget,QTreeWidgetItem
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtCore import QFile
 from PySide2.QtGui import QIcon
@@ -22,12 +22,77 @@ class MyBase:
         self.ui = QUiLoader().load(qfile_base)
         self.ui.searchBtn1.clicked.connect(self.searchBtnClick)
         self.ui.saveWordBtn.clicked.connect(self.saveWordsClick)
-        self.ui.saveTextBtn.clicked.connect(self.exit)
+        self.ui.saveTextBtn.clicked.connect(self.saveTextBtnClick)
+        self.ui.insertWordBtn.clicked.connect(self.insertWordBtnClick)
+
+        # self.ui.treeWidget_top.setHeaderLabels(['情绪2'])
 
         # openAction = QAction()
         # openAction.setShortcut('Ctrl+o')
         # openAction.triggered.connect(self.exit)
         # self.ui.searchBtn1.addAction(openAction)
+
+    # 录入/修改名词集录
+    def insertWordBtnClick(self):
+        print('录入/修改名词集录')
+        isEdit = False
+        document = Document("book/docxs/mybase/小说名词集录.docx")
+        for paragraph in document.paragraphs:
+            line = paragraph.text
+            keyWords = self.ui.lineEdit.text()
+            if keyWords in line \
+                    and '【' in line \
+                    and '】' in line:
+                isEdit = True
+            if '---end--' in line and isEdit == True:
+                print('修改成功...')
+                paragraph.insert_paragraph_before(self.ui.lineEdit2.text())
+                document.save('book/docxs/mybase/小说名词集录.docx')
+                isEdit = False
+                break
+
+    def saveTextBtnClick(self):
+        print('------录入句录------')
+        print(self.ui.textEdit1.toPlainText())
+        temp_Document = Document("book/docxs/mybase/temp.docx")
+        new_key_word = ''
+        has_this_word = False
+        for line in temp_Document.paragraphs:
+            if '【' in line.text and '】' in line.text:
+                print(line.text)
+                new_key_word = line.text
+                break
+
+        keyWords = '【' + self.ui.lineEdit.text() + '】'
+        document = Document("book/docxs/mybase/小说例句集录.docx")
+        print('总行数：', document.paragraphs)
+        for paragraph in document.paragraphs:
+            if new_key_word in paragraph.text:
+                print('收录关键词：'+paragraph.text+'==搜索关键词：'+new_key_word)
+                has_this_word = True
+                break
+            if '---名词列表end---' in paragraph.text:
+                paragraph.insert_paragraph_before(new_key_word)
+
+        if has_this_word:
+            print('已存在，不支持重复录入...')
+            return
+        else:
+            # 添加新的词汇例句
+            print('# 添加新的词汇例句')
+            for paragraph in temp_Document.paragraphs:
+                print(paragraph.text)
+
+                if '【' in paragraph.text:
+                    document.add_heading(paragraph.text, 3)
+                elif '__' in paragraph.text:
+                    # document.add_paragraph(paragraph.text, style='Intense Quote')
+                    document.add_paragraph(paragraph.text)
+                else:
+                    document.add_paragraph(paragraph.text)
+
+            document.save('book/docxs/mybase/小说例句集录.docx')
+
 
     def exit(self):
         print('ctrl+o')
@@ -53,6 +118,7 @@ class MyBase:
 
     def saveWordsClick(self):
         print('------修改后的名词解释------')
+        return
         print(self.ui.textEdit1.toPlainText())
         temp_Document = Document("book/docxs/mybase/temp.docx")
         new_key_word = ''
@@ -68,7 +134,7 @@ class MyBase:
         # # 在最末行添加
         # document.add_paragraph(self.ui.textEdit1.toPlainText())
         # document.save('book/docxs/mybase/小说名词集录.docx')
-        document = Document("book/docxs/mybase/小时例句集录.docx")
+        document = Document("book/docxs/mybase/小说例句集录.docx")
         print('总行数：', document.paragraphs)
         for paragraph in document.paragraphs:
             if new_key_word in paragraph.text:
@@ -77,6 +143,7 @@ class MyBase:
                 has_this_word = True
                 break
         if has_this_word:
+            print('已存在，不支持重复录入...')
             return
         else:
             # 添加新的词汇例句
@@ -84,7 +151,7 @@ class MyBase:
             for paragraph in temp_Document.paragraphs:
                 print(paragraph.text)
                 document.add_paragraph(paragraph.text)
-                document.save('book/docxs/mybase/小时例句集录.docx')
+                document.save('book/docxs/mybase/小说例句集录.docx')
         return
 
         for index in range(len(document.paragraphs)):
@@ -109,10 +176,13 @@ class MyBase:
         self.ui.textEdit1.clear()
         document = Document("book/docxs/mybase/小说名词集录.docx")
         isOpen = False
-        keyWords = '【' + self.ui.lineEdit.text() + '】'
+        # keyWords = '【' + self.ui.lineEdit.text() + '】'
+        keyWords = self.ui.lineEdit.text()
         for paragraph in document.paragraphs:
             line = paragraph.text
-            if keyWords in line:
+            if keyWords in line \
+                    and '【' in line \
+                    and '】' in line:
                 isOpen = True
 
             if isOpen == True:
@@ -172,7 +242,7 @@ class MyBase:
             wrod = keyWords
             if wrod in line:
                 linnn = line.split(wrod)
-                newLine = linnn[0] + '__' + wrod + '__' + linnn[1]
+                newLine = linnn[0] + '『' + wrod + '』' + linnn[1]
                 print('下一行：', nextLine)
                 # self.ui.textEdit3.insertPlainText(nextLine)
                 print('-------')
@@ -187,11 +257,10 @@ class MyBase:
                 # 记录下一行
                 readNextLine = True
                 # print('当前行：', paragraph.text)
-                document1.add_paragraph(nextLine+'\n\n')
-                document1.add_paragraph('\n\n')
-                # document1.add_paragraph('\n\n')
-                document1.add_paragraph(lastLine+'\n')
-                document1.add_paragraph(newLine+'\n', style='Intense Quote')
+                document1.add_paragraph(nextLine)
+                document1.add_paragraph()
+                document1.add_paragraph(lastLine)
+                document1.add_paragraph(newLine, style='Intense Quote')
 
 
             lastLine = line
