@@ -222,10 +222,13 @@ class MyBase:
         nextLine = ''
         readNextLine = False
 
-        all_paragraphs = document.paragraphs
         keyWords = self.ui.lineEdit.text()
-        print(keyWords)
+        keyWordList = keyWords.split(" ")
+        for keyW in keyWordList:
+            print("关键词："+keyW)
+        # return
 
+        all_paragraphs = document.paragraphs
         for paragraph in all_paragraphs:
             line = paragraph.text
             if line in '\n' \
@@ -239,10 +242,21 @@ class MyBase:
                 readNextLine = False
                 continue
 
-            wrod = keyWords
-            if wrod in line:
-                linnn = line.split(wrod)
-                newLine = linnn[0] + '『' + wrod + '』' + linnn[1]
+            word = keyWords
+            word2 = ''
+            word3 = ''
+            print('gg')
+            if len(keyWordList) == 1:
+                word = keyWordList[0]
+            elif len(keyWordList) == 2:
+                word2 = keyWordList[1]
+            else:
+                word2 = keyWordList[1]
+                word3 = keyWordList[2]
+
+            if word in line and word2 in line and word3 in line:
+                linnn = line.split(word)
+                newLine = linnn[0] + '『' + word + '』' + linnn[1]
                 print('下一行：', nextLine)
                 # self.ui.textEdit3.insertPlainText(nextLine)
                 print('-------')
